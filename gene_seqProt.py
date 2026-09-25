@@ -57,8 +57,12 @@ while continuar == True:
         print('Insira outro gene de ineresse:')
     chave = input()
     sequencia = gene_prot[chave]
+    texto_fasta = gene_prot[chave]
+    partes = texto_fasta.split(']', 1)
+    sequencia_pura = partes[1].replace('\n', '')
+    qtd_aminoacidos = len(sequencia_pura)
     if chave in gene_prot:
-        print('Esse gene possuí',len(sequencia.split(']')[1]),'aminoácidos e os aminoácidos que o compõem são:\n', gene_prot[chave])
+        print('Esse gene possuí',qtd_aminoacidos,'aminoácidos e os aminoácidos que o compõem são:\n', gene_prot[chave])
         print('Gostaria de procurar outro gene? Responda Sim ou Não')
         sim_nao = input()
         if sim_nao == 'Sim':
